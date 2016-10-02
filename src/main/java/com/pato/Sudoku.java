@@ -94,4 +94,12 @@ public class Sudoku {
 
         return squares;
     }
+
+
+    public Sudoku set(AbsoluteCoordinate coordinate, Integer value) {
+        Coordinate sudokuC = coordinate.getSudokuCoordinate();
+        Coordinate squareC = coordinate.getSquareCoordinate();
+        getData()[sudokuC.getX()][sudokuC.getY()].getData()[squareC.getX()][squareC.getY()] = OptionalInt.of(value);
+        return this;
+    }
 }
