@@ -1,7 +1,6 @@
 package com.pato;
 
-import org.jetbrains.annotations.Contract;
-
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.OptionalInt;
@@ -63,5 +62,14 @@ public class Square {
             line.add(data[i][horizontalIndex]);
 
         return line;
+    }
+
+    public List<OptionalInt> getValues() {
+        List<OptionalInt> values = new LinkedList<>();
+
+        for (int i = 0; i < 3; i++) for (int j = 0; j < 3; j++)
+            values.add(data[i][j]);
+
+        return values;
     }
 }

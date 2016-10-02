@@ -85,4 +85,13 @@ public class Sudoku {
 
         return line;
     }
+
+    public List<Square> getSquares() {
+        List<Square> squares = new LinkedList<>();
+
+        for (int i = 0; i < 3; i++) for (int j = 0; j < 3; j++)
+            squares.add(data[i][j]);
+
+        return squares;
+    }
 }
