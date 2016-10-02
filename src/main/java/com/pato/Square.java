@@ -46,4 +46,22 @@ public class Square {
 
         return emptyPositions;
     }
+
+    public List<OptionalInt> getHorizontalLine(int verticalIndex) {
+        List<OptionalInt> line = new LinkedList<>();
+
+        for (int i = 0; i < 3; i++)
+            line.add(data[verticalIndex][i]);
+
+        return line;
+    }
+
+    public List<OptionalInt> getVerticalLine(int horizontalIndex) {
+        List<OptionalInt> line = new LinkedList<>();
+
+        for (int i = 0; i < 3; i++)
+            line.add(data[i][horizontalIndex]);
+
+        return line;
+    }
 }

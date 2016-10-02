@@ -1,7 +1,9 @@
 package com.pato;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.OptionalInt;
 import java.util.stream.Collectors;
 
 /**
@@ -51,5 +53,36 @@ public class Sudoku {
         }
 
         return results;
+    }
+
+    public List<List<OptionalInt>> lines() {
+        List<List<OptionalInt>> lines = new LinkedList<>();
+
+        for (int i = 0; i < 9; i++) {
+            lines.add(getHorizontalLine(i));
+            lines.add(getVerticalLine(i));
+        }
+
+        return lines;
+    }
+
+    public List<OptionalInt> getHorizontalLine(int verticalIndex) {
+        List<OptionalInt> line = new LinkedList<>();
+        int quotient = verticalIndex / 3;
+        int rest = verticalIndex % 3;
+        for (int i = 0; i < 3; i++)
+            line.addAll(data[quotient][i].getHorizontalLine(rest));
+
+        return line;
+    }
+
+    public List<OptionalInt> getVerticalLine(int horizontalIndex) {
+        List<OptionalInt> line = new LinkedList<>();
+        int quotient = horizontalIndex / 3;
+        int rest = horizontalIndex % 3;
+        for (int i = 0; i < 3; i++)
+            line.addAll(data[i][quotient].getVerticalLine(rest));
+
+        return line;
     }
 }

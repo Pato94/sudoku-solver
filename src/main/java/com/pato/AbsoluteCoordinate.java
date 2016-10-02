@@ -13,4 +13,12 @@ public class AbsoluteCoordinate {
         this.sudokuCoordinate = sudokuCoordinate;
         this.squareCoordinate = squareCoordinate;
     }
+
+    public Coordinate getSudokuCoordinate() {
+        return sudokuCoordinate;
+    }
+
+    public Coordinate getSquareCoordinate() {
+        return squareCoordinate;
+    }
 }
