@@ -8,6 +8,7 @@ import java.util.OptionalInt;
 public class Fixture {
 
     public Sudoku hardSudoku;
+    public Sudoku hordSudoku;
     public Sudoku emptySudoku;
     public Sudoku wrongSudoku2;
     public Sudoku completeSudoku;
@@ -37,6 +38,15 @@ public class Fixture {
     public Square hardSquare7;
     public Square hardSquare8;
     public Square hardSquare9;
+    public Square hordSquare1;
+    public Square hordSquare2;
+    public Square hordSquare3;
+    public Square hordSquare4;
+    public Square hordSquare5;
+    public Square hordSquare6;
+    public Square hordSquare7;
+    public Square hordSquare8;
+    public Square hordSquare9;
 
     public Fixture() {
         createSquares();
@@ -75,6 +85,12 @@ public class Fixture {
                 { hardSquare1, hardSquare2, hardSquare3 },
                 { hardSquare4, hardSquare5, hardSquare6 },
                 { hardSquare7, hardSquare8, hardSquare9 }
+        });
+
+        hordSudoku = new Sudoku(new Square[][] {
+                { hordSquare1, hordSquare2, hordSquare3 },
+                { hordSquare4, hordSquare5, hordSquare6 },
+                { hordSquare7, hordSquare8, hordSquare9 }
         });
     }
 
@@ -206,6 +222,60 @@ public class Fixture {
                 OptionalInt.empty(), OptionalInt.empty(), OptionalInt.of(9),
                 OptionalInt.empty(), OptionalInt.empty(), OptionalInt.empty(),
                 OptionalInt.of(8), OptionalInt.empty(), OptionalInt.empty()
+        );
+
+        hordSquare1 = new Square(
+                OptionalInt.of(8), OptionalInt.empty(), OptionalInt.empty(),
+                OptionalInt.empty(), OptionalInt.empty(), OptionalInt.of(3),
+                OptionalInt.empty(), OptionalInt.of(7), OptionalInt.empty()
+        );
+
+        hordSquare2 = new Square(
+                OptionalInt.empty(), OptionalInt.empty(), OptionalInt.empty(),
+                OptionalInt.of(6), OptionalInt.empty(), OptionalInt.empty(),
+                OptionalInt.empty(), OptionalInt.of(9), OptionalInt.empty()
+        );
+
+        hordSquare3 = new Square(
+                OptionalInt.empty(), OptionalInt.empty(), OptionalInt.empty(),
+                OptionalInt.empty(), OptionalInt.empty(), OptionalInt.empty(),
+                OptionalInt.of(2), OptionalInt.empty(), OptionalInt.empty()
+        );
+
+        hordSquare4 = new Square(
+                OptionalInt.empty(), OptionalInt.of(5), OptionalInt.empty(),
+                OptionalInt.empty(), OptionalInt.empty(), OptionalInt.empty(),
+                OptionalInt.empty(), OptionalInt.empty(), OptionalInt.empty()
+        );
+
+        hordSquare5 = new Square(
+                OptionalInt.empty(), OptionalInt.empty(), OptionalInt.of(7),
+                OptionalInt.empty(), OptionalInt.of(4), OptionalInt.of(5),
+                OptionalInt.of(1), OptionalInt.empty(), OptionalInt.empty()
+        );
+
+        hordSquare6 = new Square(
+                OptionalInt.empty(),OptionalInt.empty(),OptionalInt.empty(),
+                OptionalInt.of(7),OptionalInt.empty(),OptionalInt.empty(),
+                OptionalInt.empty(),OptionalInt.of(3),OptionalInt.empty()
+        );
+
+        hordSquare7 = new Square(
+                OptionalInt.empty(), OptionalInt.empty(), OptionalInt.of(1),
+                OptionalInt.empty(),OptionalInt.empty(),OptionalInt.of(8),
+                OptionalInt.empty(),OptionalInt.of(9),OptionalInt.empty()
+        );
+
+        hordSquare8 = new Square(
+                OptionalInt.empty(),OptionalInt.empty(),OptionalInt.empty(),
+                OptionalInt.of(5),OptionalInt.empty(),OptionalInt.empty(),
+                OptionalInt.empty(),OptionalInt.empty(),OptionalInt.empty()
+        );
+
+        hordSquare9 = new Square(
+                OptionalInt.empty(),OptionalInt.of(6),OptionalInt.of(8),
+                OptionalInt.empty(),OptionalInt.of(1),OptionalInt.empty(),
+                OptionalInt.of(4),OptionalInt.empty(),OptionalInt.empty()
         );
     }
 }

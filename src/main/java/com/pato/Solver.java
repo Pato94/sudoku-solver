@@ -19,12 +19,14 @@ public class Solver {
 
         Sudoku solved = rSolveSudoku(steps, sudoku);
 
-        System.out.print("SE RESOLVIO!");
+        solved.printStatus();
 
         return solved;
     }
 
     private Sudoku rSolveSudoku(Stack<Step> steps, Sudoku sudoku) {
+        System.out.print("rSolving Sudoku steps: " + steps.size() + "\n");
+
         List<AbsoluteCoordinate> emptyPositions = sudoku.locateEmptyPositions();
 
         if (emptyPositions.isEmpty()) {
@@ -35,12 +37,15 @@ public class Solver {
 
         if (guesses.isEmpty()) {
             while(steps.peek().getGuesses().isEmpty()) {
+                System.out.print("Going back\n");
                 steps.pop();
             }
 
             Step currentStep = steps.peek();
             Guess guess = currentStep.getGuesses().pop();
             Sudoku newSudoku = guess.apply(currentStep.getSudoku());
+
+            System.out.print("Taking another path\n");
 
             return rSolveSudoku(steps, newSudoku);
         }
@@ -50,6 +55,8 @@ public class Solver {
         Guess guess = guesses.pop();
         Sudoku newSudoku = guess.apply(sudoku);
         steps.add(step);
+
+        System.out.print("Going forward, size of guesses: " + guesses.size() + "\n");
 
         return rSolveSudoku(steps, newSudoku);
     }

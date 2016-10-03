@@ -34,4 +34,13 @@ public class SolverTests {
 
         assertEquals(0, sudoku.locateEmptyPositions().size());
     }
+
+    @Test
+    public void testASolverCanSolveHordSudokus() {
+        Solver solver = new Solver();
+
+        Sudoku sudoku = solver.solveSudoku(fixture.hordSudoku);
+
+        assertEquals(0, sudoku.locateEmptyPositions().size());
+    }
 }

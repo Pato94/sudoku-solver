@@ -102,4 +102,21 @@ public class Sudoku {
         getData()[sudokuC.getX()][sudokuC.getY()].getData()[squareC.getX()][squareC.getY()] = OptionalInt.of(value);
         return this;
     }
+
+    public void printStatus() {
+        for (int i = 0; i < 9; i++) {
+            getHorizontalLine(i)
+                    .stream()
+                    .map(optionalInt -> {
+                        if (optionalInt.isPresent()) {
+                            return String.valueOf(optionalInt.getAsInt());
+                        } else {
+                            return "-";
+                        }
+                    }).forEach(System.out::print);
+
+            System.out.print("\n");
+        }
+
+    }
 }
